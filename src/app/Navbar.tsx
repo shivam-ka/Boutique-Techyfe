@@ -53,7 +53,7 @@ export default function Navbar() {
 
       {/* Right Side Actions */}
       <div className="flex items-center gap-0 md:gap-2">
-        <ThemeToggleButton />
+        <ThemeToggleButton start="center" variant="circle" />
 
         <Button variant="ghost" size="icon" className="relative rounded-full">
           <Handbag className="size-5" />

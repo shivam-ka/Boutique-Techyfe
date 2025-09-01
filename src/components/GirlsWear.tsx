@@ -1,5 +1,7 @@
 import { girlsWear, Product } from "@/data/girlsWear";
 import Image from "next/image";
+import { Button } from "./ui/button";
+import { ExternalLink } from "lucide-react";
 
 export default function GirlsWear() {
   return (
@@ -34,6 +36,7 @@ export default function GirlsWear() {
     return (
       <a
         href={productInquiryLink("919990118082", product.name)}
+        target="_blank"
         className="group border border-muted-foreground rounded-sm transition-shadow duration-300 overflow-hidden cursor-pointer"
       >
         <div className="relative aspect-square overflow-hidden">
@@ -41,17 +44,17 @@ export default function GirlsWear() {
             alt={product.name}
             src={product.image}
             width={300}
-            height={600}
+            height={500}
             draggable={false}
             className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-200"
           />
         </div>
 
-        <div className="p-2 sm:p-3 space-y-1.5 sm:space-y-2">
-          <h2 className="font-semibold text-base md:text-lg group-hover:text-pink-600 transition-colors line-clamp-1">
+        <div className="p-2 sm:p-3 space-y-1.5 ">
+          <h2 className="font-semibold text-base md:text-lg transition-colors line-clamp-1">
             {product.name}
           </h2>
-          <p className="text-muted-foreground text-sm line-clamp-2">
+          <p className="text-muted-foreground text-sm line-clamp-2 font-outfit">
             {product.description}
           </p>
           <div className="flex items-center gap-2">
@@ -60,6 +63,9 @@ export default function GirlsWear() {
             </p>
             <p className="text-xl font-bold text-pink-700">{product.price}</p>
           </div>
+          <Button className="w-full bg-pink-500 dark:bg-pink-700 text-white hover:bg-pink-600 dark:hover:bg-pink-800 rounded-sm">
+            Know More <ExternalLink />
+          </Button>
         </div>
       </a>
     );
